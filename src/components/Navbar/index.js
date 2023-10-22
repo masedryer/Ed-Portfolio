@@ -155,7 +155,7 @@ const Navbar = () => {
       <NavContainer>
         <NavLogo to="/">
           <a
-            href="https://github.com/"
+            href="https://github.com/masedryer"
             style={{
               display: "flex",
               alignItems: "center",
