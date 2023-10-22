@@ -132,17 +132,20 @@ const Projects = ({ openModal, setOpenModal }) => {
             </ToggleButton>
           )}
           <Divider />
-          {toggle === "web app" ? (
+          {toggle === "programming" ? (
             <ToggleButton
               active
-              value="web app"
-              onClick={() => setToggle("web app")}
+              value="programming"
+              onClick={() => setToggle("programming")}
             >
-              WEB APP'S
+              Programming
             </ToggleButton>
           ) : (
-            <ToggleButton value="web app" onClick={() => setToggle("web app")}>
-              WEB APP'S
+            <ToggleButton
+              value="programming"
+              onClick={() => setToggle("programming")}
+            >
+              Programming
             </ToggleButton>
           )}
           <Divider />

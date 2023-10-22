@@ -155,7 +155,7 @@ const Navbar = () => {
       <NavContainer>
         <NavLogo to="/">
           <a
-            href="https://github.com/masedryer"
+            href="/"
             style={{
               display: "flex",
               alignItems: "center",
@@ -181,7 +181,9 @@ const Navbar = () => {
           <NavLink href="#education">Education</NavLink>
         </NavItems>
         <ButtonContainer>
-          <GithubButton>Github Profile</GithubButton>
+          <GithubButton>
+            <a href="https://github.com/masedryer">"Github Profile</a>
+          </GithubButton>
         </ButtonContainer>
       </NavContainer>
       {open && (
