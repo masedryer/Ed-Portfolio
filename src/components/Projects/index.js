@@ -149,37 +149,20 @@ const Projects = ({ openModal, setOpenModal }) => {
             </ToggleButton>
           )}
           <Divider />
-          {toggle === "android app" ? (
+          {toggle === "wireframe" ? (
             <ToggleButton
               active
-              value="android app"
-              onClick={() => setToggle("android app")}
+              value="wireframe"
+              onClick={() => setToggle("wireframe")}
             >
-              ANDROID APP'S
+              Wireframe
             </ToggleButton>
           ) : (
             <ToggleButton
-              value="android app"
-              onClick={() => setToggle("android app")}
+              value="wireframe"
+              onClick={() => setToggle("wireframe")}
             >
-              ANDROID APP'S
-            </ToggleButton>
-          )}
-          <Divider />
-          {toggle === "machine learning" ? (
-            <ToggleButton
-              active
-              value="machine learning"
-              onClick={() => setToggle("machine learning")}
-            >
-              MACHINE LEARNING
-            </ToggleButton>
-          ) : (
-            <ToggleButton
-              value="machine learning"
-              onClick={() => setToggle("machine learning")}
-            >
-              MACHINE LEARNING
+              Wireframe
             </ToggleButton>
           )}
         </ToggleButtonGroup>
