@@ -181,8 +181,8 @@ const Navbar = () => {
           <NavLink href="#education">Education</NavLink>
         </NavItems>
         <ButtonContainer>
-          <GithubButton>
-            <a href="https://github.com/masedryer">"Github Profile</a>
+          <GithubButton href={Bio.github} target="_blank">
+            Github Profile
           </GithubButton>
         </ButtonContainer>
       </NavContainer>

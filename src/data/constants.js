@@ -3,7 +3,7 @@ export const Bio = {
   roles: ["Front-End DEveloper", "Software Developer", "Student"],
   description:
     "I am a student in Republic Polytechnic pursuing a diploma in digital design and development. Forward-thinking software developer with a passion for web technologies. Strong competence in crafting innovative digital solutions. Committed to continuous self-development and poised to explore future opportunities in e-commerce and business innovation.",
-  github: "https://github.com/rishavchanda",
+  github: "https://github.com/masedryer",
   resume:
     "https://drive.google.com/file/d/1ffZrcMcn8UatXGIaautbbqpV7ADNaETA/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
