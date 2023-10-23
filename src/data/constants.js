@@ -4,9 +4,9 @@ export const Bio = {
   description:
     "I am a student in Republic Polytechnic pursuing a diploma in digital design and development. Forward-thinking software developer with a passion for web technologies. Strong competence in crafting innovative digital solutions. Committed to continuous self-development and poised to explore future opportunities in e-commerce and business innovation.",
   github: "https://github.com/masedryer",
-  resume: "/",
+  resume:
+    "https://drive.google.com/file/d/19hAP_LBZ5UyHK5v5Dh4NCrqqx2IxPoxG/view?usp=sharing",
   linkedin: "/",
-
   insta: "/",
 };
 
