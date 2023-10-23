@@ -4,8 +4,7 @@ export const Bio = {
   description:
     "I am a student in Republic Polytechnic pursuing a diploma in digital design and development. Forward-thinking software developer with a passion for web technologies. Strong competence in crafting innovative digital solutions. Committed to continuous self-development and poised to explore future opportunities in e-commerce and business innovation.",
   github: "https://github.com/masedryer",
-  resume:
-    "https://drive.google.com/file/d/1ffZrcMcn8UatXGIaautbbqpV7ADNaETA/view?usp=sharing",
+  resume: "/",
   linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
   twitter: "https://twitter.com/RishavChanda",
   insta: "https://www.instagram.com/rishav_chanda/",
@@ -253,6 +252,18 @@ export const projects = [
     image: "https://i.imgur.com/ojLSuro.png",
     tags: ["Java"],
     category: "programming",
+    github: "/",
+    webapp: "/",
+  },
+  {
+    id: 3,
+    title: "Akrit",
+    date: "May 2023 - Jun 2023",
+    description:
+      "Develop a wireframe that is a blockchain microlending platform, tilizing Smart Contracts and DPoS.This app allows users to offer loands and loan money.This encourages financial inclusion.",
+    image: "https://i.imgur.com/ojLSuro.png",
+    tags: ["Figma"],
+    category: "wireframe",
     github: "/",
     webapp: "/",
   },
