@@ -119,7 +119,7 @@ export const projects = [
     image: "https://i.imgur.com/5GT22B7.png",
     tags: ["PHP", "HTML", "CSS", "BootStrap", "mySQL"],
     category: "programming",
-    github: "https://github.com/masedryer/MovieReview",
+    github: "/",
   },
   {
     id: 0,
@@ -130,8 +130,8 @@ export const projects = [
     image: "https://i.imgur.com/VeSCsH7.png",
     tags: ["Html", "CSS"],
     category: "programming",
-    github: "https://github.com/rishavchanda/Podstream",
-    webapp: "https://podstream.netlify.app/",
+    github: "/",
+    webapp: "/",
   },
   {
     id: 1,
@@ -142,8 +142,8 @@ export const projects = [
     image: "https://i.imgur.com/RjbGglj.png",
     tags: ["Java", "JUnit", "Agile", "Git"],
     category: "programming",
-    github: "https://github.com/rishavchanda/Project-Management-App",
-    webapp: "https://vexa-app.netlify.app/",
+    github: "/",
+    webapp: "/",
   },
   {
     id: 2,
