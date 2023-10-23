@@ -185,7 +185,7 @@ export const education = [
 export const projects = [
   {
     id: 9,
-    title: "CybroSphere",
+    title: "BlockBuster",
     date: "Apr 2023 - Jul 2023",
     description:
       "Developing a full-stack website application where users can reviews and rate the movies that they had watch.It is also platform for peole to see movies and how good the movie is for audience.Implemented using html,css,bootstrap for front-end and back-end using php and mySQL.In mind of users using small devices, this website is also responsive which make a seamless experience for all devices.   ",
