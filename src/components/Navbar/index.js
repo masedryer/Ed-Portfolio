@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 import { useTheme } from "styled-components";
 import { Bio } from "../../data/constants";
-
+//import { ReactComponent as Logo } from "../Navbar/EdryLogo/4.svg";
 const Nav = styled.div`
 background-color: ${({ theme }) => theme.card_light};
 height: 80px;
@@ -156,7 +156,7 @@ const Navbar = () => {
       <NavContainer>
         <NavLogo to="/">
           <a
-            href="/"
+            href=""
             style={{
               display: "flex",
               alignItems: "center",
@@ -179,11 +179,10 @@ const Navbar = () => {
           <NavLink href="#about">About</NavLink>
           <NavLink href="#skills">Skills</NavLink>
           <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#education">Education</NavLink>
         </NavItems>
         <ButtonContainer>
-          <GithubButton href={Bio.github} target="_blank">
-            Github Profile
+          <GithubButton href={Bio.email} target="_blank">
+            Email
           </GithubButton>
         </ButtonContainer>
       </NavContainer>
@@ -213,14 +212,7 @@ const Navbar = () => {
           >
             Projects
           </MobileMenuLinks>
-          <MobileMenuLinks
-            href="#education"
-            onClick={() => {
-              setOpen(!open);
-            }}
-          >
-            Education
-          </MobileMenuLinks>
+
           <GithubButton
             style={{
               padding: "10px 16px",

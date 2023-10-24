@@ -8,6 +8,7 @@ export const Bio = {
     "https://drive.google.com/file/d/19hAP_LBZ5UyHK5v5Dh4NCrqqx2IxPoxG/view?usp=sharing",
   linkedin: "/",
   insta: "/",
+  email: "edryrezal@gmail.com",
 };
 
 export const skills = [
