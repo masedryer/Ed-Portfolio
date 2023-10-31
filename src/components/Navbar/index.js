@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 import { useTheme } from "styled-components";
 import { Bio } from "../../data/constants";
+import logo from "../Navbar/EdryLogo/EDry Rezal.svg";
 //import { ReactComponent as Logo } from "../Navbar/EdryLogo/4.svg";
 const Nav = styled.div`
 background-color: ${({ theme }) => theme.card_light};
@@ -40,7 +41,13 @@ text-decoration: none;
 font-size:40px;
 align-items: center;
 @media screen and (max-width: 640px){
-  passing 0 0px;
+  padding 0 0px;
+}
+img {
+  max-width: 200px; /* Adjust the max-width as needed */
+  height: auto; /* Maintain aspect ratio */
+  padding-top:20px;
+  
 }`;
 
 const MobileIcon = styled.div`
@@ -156,7 +163,7 @@ const Navbar = () => {
       <NavContainer>
         <NavLogo to="/">
           <a
-            href=""
+            href="/"
             style={{
               display: "flex",
               alignItems: "center",
@@ -165,7 +172,7 @@ const Navbar = () => {
               cursor: "pointer",
             }}
           >
-            <Span>Ed.</Span>
+            <img src={logo} alt="Ed" />
           </a>
         </NavLogo>
         <MobileIcon>

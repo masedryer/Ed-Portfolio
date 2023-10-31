@@ -184,16 +184,4 @@ export const projects = [
     github: "/",
     webapp: "/",
   },
-  {
-    id: 3,
-    title: "Akrit",
-    date: "May 2023 - Jun 2023",
-    description:
-      "Develop a wireframe that is a blockchain microlending platform, tilizing Smart Contracts and DPoS.This app allows users to offer loands and loan money.This encourages financial inclusion.",
-    image: "https://i.imgur.com/ojLSuro.png",
-    tags: ["Figma"],
-    category: "wireframe",
-    github: "/",
-    webapp: "/",
-  },
 ];
