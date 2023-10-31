@@ -8,6 +8,7 @@ import Hero from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router } from "react-router-dom";
 import ProjectModals from "./components/ProjectModal";
+import Contact from "./components/Contacts";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -44,6 +45,9 @@ function App() {
             <Skills />
           </Wrapper>
           <Projects openModal={openModal} setOpenModal={setOpenModal} />
+          <Wrapper>
+            <Contact />
+          </Wrapper>
           {openModal.state && (
             <ProjectModals openModal={openModal} setOpenModal={setOpenModal} />
           )}

@@ -6,6 +6,7 @@ import { useTheme } from "styled-components";
 import { Bio } from "../../data/constants";
 import logo from "../Navbar/EdryLogo/EDry Rezal.svg";
 //import { ReactComponent as Logo } from "../Navbar/EdryLogo/4.svg";
+
 const Nav = styled.div`
 background-color: ${({ theme }) => theme.card_light};
 height: 100px;
@@ -186,6 +187,7 @@ const Navbar = () => {
           <NavLink href="#about">About</NavLink>
           <NavLink href="#skills">Skills</NavLink>
           <NavLink href="#projects">Projects</NavLink>
+          <NavLink href="#contacts">Contact</NavLink>
         </NavItems>
         <ButtonContainer>
           <GithubButton href={Bio.email} target="_blank">
@@ -218,6 +220,14 @@ const Navbar = () => {
             }}
           >
             Projects
+          </MobileMenuLinks>
+          <MobileMenuLinks
+            href="#contact"
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
+            Contact
           </MobileMenuLinks>
 
           <GithubButton
