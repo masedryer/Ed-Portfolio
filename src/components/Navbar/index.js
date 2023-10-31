@@ -8,7 +8,7 @@ import logo from "../Navbar/EdryLogo/EDry Rezal.svg";
 //import { ReactComponent as Logo } from "../Navbar/EdryLogo/4.svg";
 const Nav = styled.div`
 background-color: ${({ theme }) => theme.card_light};
-height: 80px;
+height: 100px;
 display:flex;
 justify-content: center;
 align-items: center;
@@ -24,7 +24,7 @@ z-index:10;
 const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 60px;
+  height: 70px;
   z-index: 1;
   width: 100%;
   padding: 0 24px;
