@@ -143,8 +143,7 @@ export const projects = [
     image: "https://i.imgur.com/RjbGglj.png",
     tags: ["Java", "JUnit", "Agile", "Git"],
     category: "programming",
-    github: "/",
-    webapp: "/",
+    webapp: "https://github.com/BlackNet13/C206_CaseStudy",
   },
   {
     id: 2,
@@ -155,7 +154,7 @@ export const projects = [
     image: "https://i.imgur.com/dvIi45i.png",
     tags: ["Adobe XD"],
     category: "wireframe",
-    github: "/",
+
     webapp:
       "https://xd.adobe.com/view/43600389-f966-4211-99b3-96cc4f03de3b-1633/",
     member: [
@@ -182,7 +181,6 @@ export const projects = [
     image: "https://i.imgur.com/ojLSuro.png",
     tags: ["Java"],
     category: "programming",
-    github: "/",
-    webapp: "/",
+    webapp: "https://github.com/masedryer/Hospital-Management-System",
   },
 ];
