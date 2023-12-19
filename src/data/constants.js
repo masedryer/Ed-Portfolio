@@ -120,7 +120,7 @@ export const projects = [
     image: "https://i.imgur.com/5GT22B7.png",
     tags: ["PHP", "HTML", "CSS", "BootStrap", "mySQL"],
     category: "programming",
-    github: "/",
+    webapp: "https://github.com/masedryer/MovieReview",
   },
   {
     id: 0,
@@ -131,8 +131,7 @@ export const projects = [
     image: "https://i.imgur.com/VeSCsH7.png",
     tags: ["Html", "CSS"],
     category: "programming",
-    github: "/",
-    webapp: "/",
+    webapp: "https://github.com/masedryer/JavaTechnicalDocmuentaionPage",
   },
   {
     id: 1,
