@@ -1,6 +1,18 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useEffect, useState } from "react";
+import styled, { keyframes } from "styled-components";
 import { skills } from "../../data/constants";
+import { animateScroll as scroll } from "react-scroll";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const Container = styled.div`
   display: flex;
@@ -9,6 +21,9 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
   align-items: center;
+  opacity: 0; /* Set initial opacity to 0 */
+  transform: translateY(20px); /* Set initial translateY */
+  animation: ${fadeIn} 1s ease-out forwards; /* Apply the fade-in animation */
 `;
 
 const Wrapper = styled.div`
@@ -25,7 +40,7 @@ const Wrapper = styled.div`
   }
 `;
 
-export const Title = styled.div`
+const Title = styled.div`
   font-size: 42px;
   text-align: center;
   font-weight: 600;
@@ -37,7 +52,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Desc = styled.div`
+const Desc = styled.div`
   font-size: 18px;
   text-align: center;
   max-width: 600px;
@@ -117,8 +132,26 @@ const SkillImage = styled.img`
 `;
 
 const Skills = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const skillsSection = document.getElementById("skills");
+
+      if (skillsSection && scrollPosition >= skillsSection.offsetTop - 300) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Container id="skills">
+    <Container id="skills" style={{ opacity: isVisible ? 1 : 0 }}>
       <Wrapper>
         <Title>Skills</Title>
         <Desc>
@@ -126,12 +159,12 @@ const Skills = () => {
           past 2 years.
         </Desc>
         <SkillsContainer>
-          {skills.map((skill) => (
-            <Skill>
+          {skills.map((skill, index) => (
+            <Skill key={index}>
               <SkillTitle>{skill.title}</SkillTitle>
               <SkillList>
-                {skill.skills.map((item) => (
-                  <SkillItem>
+                {skill.skills.map((item, itemIndex) => (
+                  <SkillItem key={itemIndex}>
                     <SkillImage src={item.image} />
                     {item.name}
                   </SkillItem>

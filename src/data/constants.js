@@ -150,7 +150,8 @@ export const projects = [
     date: "Jan 2023 - Mar 2023",
     description:
       "Develop a mobile wireframe that enables Scoot passengers inflight to be able to buy food & accessories, play games, view flight map and request for service.This app also enables inflight crew to manage the passengers inflight by able to see seat map that can see the overview of the flight and also manage inventory.This is made with team ",
-    image: "https://i.imgur.com/dvIi45i.png",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Scoot_logo.svg/1200px-Scoot_logo.svg.png",
     tags: ["Adobe XD"],
     category: "wireframe",
 
@@ -181,5 +182,28 @@ export const projects = [
     tags: ["Java"],
     category: "programming",
     webapp: "https://github.com/masedryer/Hospital-Management-System",
+  },
+  {
+    id: 4,
+    title: "Akrit",
+    date: "Dec 2022 - Mar 2023",
+    description:
+      "A FinTech app used for stuednts in low income country to loan to other people.It is used for FinTech Competition",
+    image: "https://i.imgur.com/cT4qQqL.png",
+    tags: ["Figma"],
+    category: "wireframe",
+    webapp:
+      "https://www.figma.com/proto/peDqph9PniXnBourAWs3sY/FINTECH-MOBILE-APP%2FLOAN-APP-(Community)?type=design&node-id=170-1763&t=BzQqyTJYflYgh9PB-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=170%3A1763&show-proto-sidebar=1&mode=design",
+  },
+  {
+    id: 4,
+    title: "Toy Kingdom",
+    date: "Oct 2023- Oct 2023",
+    description: "A ecommerce website on selling toys",
+    image: "https://i.imgur.com/bDb5ZXe.png",
+    tags: ["Adobe XD"],
+    category: "wireframe",
+    webapp:
+      "https://xd.adobe.com/view/eaa7966c-f506-470b-8238-baf76c86d0f6-bff4/",
   },
 ];

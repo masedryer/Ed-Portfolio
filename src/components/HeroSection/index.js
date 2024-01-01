@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Bio } from "../../data/constants";
 import Typewriter from "typewriter-effect";
 import HeroImg from "../../images/ED.png";
+//import Arrow from "./Arrow"
 
 const HeroContainer = styled.div`
   background: ${({ theme }) => theme.card_light};

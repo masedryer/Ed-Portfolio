@@ -1,11 +1,19 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
 import { projects } from "../../data/constants";
 import ProjectCard from "../Cards/ProjectCard";
+import { Element } from "react-scroll";
 
 const Container = styled.div`
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   background: linear-gradient(
     343.07deg,
     rgba(132, 59, 206, 0.06) 5.71%,
@@ -99,95 +107,112 @@ const CardContainer = styled.div`
   align-items: center;
   gap: 28px;
   flex-wrap: wrap;
-  // display: grid;
-  // grid-template-columns: repeat(3, 1fr);
-  // grid-gap: 32px;
-  // grid-auto-rows: minmax(100px, auto);
-  // @media (max-width: 960px) {
-  //     grid-template-columns: repeat(2, 1fr);
-  // }
-  // @media (max-width: 640px) {
-  //     grid-template-columns: repeat(1, 1fr);
-  // }
 `;
 
 const Projects = ({ openModal, setOpenModal }) => {
   const [toggle, setToggle] = useState("all");
-  return (
-    <Container id="projects">
-      <Wrapper>
-        <Title>Projects</Title>
-        <Desc>
-          I have worked on a wide range of projects. From web apps to wireframe.
-          Here are some of my projects.
-        </Desc>
-        <ToggleButtonGroup>
-          {toggle === "all" ? (
-            <ToggleButton active value="all" onClick={() => setToggle("all")}>
-              All
-            </ToggleButton>
-          ) : (
-            <ToggleButton value="all" onClick={() => setToggle("all")}>
-              All
-            </ToggleButton>
-          )}
-          <Divider />
-          {toggle === "programming" ? (
-            <ToggleButton
-              active
-              value="programming"
-              onClick={() => setToggle("programming")}
-            >
-              Programming
-            </ToggleButton>
-          ) : (
-            <ToggleButton
-              value="programming"
-              onClick={() => setToggle("programming")}
-            >
-              Programming
-            </ToggleButton>
-          )}
-          <Divider />
-          {toggle === "wireframe" ? (
-            <ToggleButton
-              active
-              value="wireframe"
-              onClick={() => setToggle("wireframe")}
-            >
-              Wireframe
-            </ToggleButton>
-          ) : (
-            <ToggleButton
-              value="wireframe"
-              onClick={() => setToggle("wireframe")}
-            >
-              Wireframe
-            </ToggleButton>
-          )}
-        </ToggleButtonGroup>
+  const [isVisible, setIsVisible] = useState(false);
 
-        <CardContainer>
-          {toggle === "all" &&
-            projects.map((project) => (
-              <ProjectCard
-                project={project}
-                openModal={openModal}
-                setOpenModal={setOpenModal}
-              />
-            ))}
-          {projects
-            .filter((item) => item.category === toggle)
-            .map((project) => (
-              <ProjectCard
-                project={project}
-                openModal={openModal}
-                setOpenModal={setOpenModal}
-              />
-            ))}
-        </CardContainer>
-      </Wrapper>
-    </Container>
+  const handleScroll = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const elementOffset = document.getElementById("projects").offsetTop;
+
+    setIsVisible(scrollTop > elementOffset - window.innerHeight / 2);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      const projectsElement = document.getElementById("projects");
+      projectsElement.classList.add("fade-in");
+    }
+  }, [isVisible]);
+
+  return (
+    <Element name="projects">
+      <Container id="projects">
+        <Wrapper>
+          <Title>Projects</Title>
+          <Desc>
+            I have worked on a wide range of projects. From web apps to
+            wireframe. Here are some of my projects.
+          </Desc>
+          <ToggleButtonGroup>
+            {toggle === "all" ? (
+              <ToggleButton active value="all" onClick={() => setToggle("all")}>
+                All
+              </ToggleButton>
+            ) : (
+              <ToggleButton value="all" onClick={() => setToggle("all")}>
+                All
+              </ToggleButton>
+            )}
+            <Divider />
+            {toggle === "programming" ? (
+              <ToggleButton
+                active
+                value="programming"
+                onClick={() => setToggle("programming")}
+              >
+                Programming
+              </ToggleButton>
+            ) : (
+              <ToggleButton
+                value="programming"
+                onClick={() => setToggle("programming")}
+              >
+                Programming
+              </ToggleButton>
+            )}
+            <Divider />
+            {toggle === "wireframe" ? (
+              <ToggleButton
+                active
+                value="wireframe"
+                onClick={() => setToggle("wireframe")}
+              >
+                Wireframe
+              </ToggleButton>
+            ) : (
+              <ToggleButton
+                value="wireframe"
+                onClick={() => setToggle("wireframe")}
+              >
+                Wireframe
+              </ToggleButton>
+            )}
+          </ToggleButtonGroup>
+
+          <CardContainer>
+            {toggle === "all" &&
+              projects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  openModal={openModal}
+                  setOpenModal={setOpenModal}
+                />
+              ))}
+            {projects
+              .filter((item) => item.category === toggle)
+              .map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  openModal={openModal}
+                  setOpenModal={setOpenModal}
+                />
+              ))}
+          </CardContainer>
+        </Wrapper>
+      </Container>
+    </Element>
   );
 };
 
