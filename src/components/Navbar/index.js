@@ -159,6 +159,11 @@ const MobileMenuLinks = styled(LinkR)`
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
+
+  const handleEmailButtonClick = () => {
+    window.open("mailto:edryrezal@gmail.com");
+  };
+
   return (
     <Nav>
       <NavContainer>
@@ -190,9 +195,7 @@ const Navbar = () => {
           <NavLink href="#contact">Contact</NavLink>
         </NavItems>
         <ButtonContainer>
-          <GithubButton href={Bio.email} target="_blank">
-            Email
-          </GithubButton>
+          <GithubButton onClick={handleEmailButtonClick}>Email</GithubButton>
         </ButtonContainer>
       </NavContainer>
       {open && (
