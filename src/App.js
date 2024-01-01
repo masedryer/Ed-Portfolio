@@ -10,6 +10,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import ProjectModals from "./components/ProjectModal";
 import Contact from "./components/Contacts";
 import Arrow from "./components/HeroSection/Arrow";
+import Footer from "./components/Footer";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -52,6 +53,7 @@ function App() {
           {openModal.state && (
             <ProjectModals openModal={openModal} setOpenModal={setOpenModal} />
           )}
+          <Footer />
         </Body>
       </Router>
     </ThemeProvider>
