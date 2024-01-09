@@ -189,7 +189,7 @@ export const projects = [
     date: "Dec 2022 - Mar 2023",
     description:
       "A FinTech app used for stuednts in low income country to loan to other people.It is used for FinTech Competition",
-    image: "https://i.imgur.com/cT4qQqL.png",
+    image: "https://i.imgur.com/wglP2Hy.png",
     tags: ["Figma"],
     category: "wireframe",
     webapp:
