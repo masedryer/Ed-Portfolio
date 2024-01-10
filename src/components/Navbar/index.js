@@ -103,7 +103,6 @@ const GithubButton = styled.button`
   background-color: transparent;
   color: ${({ theme }) => theme.primary};
   border: 1.8px solid ${({ theme }) => theme.primary};
-  border-radius: 20px;
 
   justify-content: center;
   padding: 0px 20px;
