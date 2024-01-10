@@ -4,6 +4,7 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Snackbar } from "@mui/material";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { Element, scroller } from "react-scroll";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -11,8 +12,18 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
   align-items: center;
+  animation: fadeIn 2s ease-in-out; /* Add fade-in animation */
   @media (max-width: 960px) {
     padding: 0px;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 `;
 
@@ -26,6 +37,7 @@ const Wrapper = styled.div`
   max-width: 1350px;
   padding: 0px 0px 80px 0px;
   gap: 12px;
+  animation: fadeIn 2s ease-in-out; /* Add fade-in animation */
   @media (max-width: 960px) {
     flex-direction: column;
   }

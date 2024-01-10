@@ -11,7 +11,7 @@ const HeroContainer = styled.div`
   justify-content: center;
   position: relative;
   padding: 80px 30px;
-  overflow: hidden; /* Add overflow: hidden to hide the animation overflow */
+  overflow: hidden;
   @media (max-width: 960px) {
     padding: 66px 16px;
   }
@@ -72,6 +72,7 @@ const HeroInnerContainer = styled.div`
 const HeroLeftContainer = styled.div`
   width: 100%;
   order: 1;
+  animation: fadeInLeft 2s ease-in-out; /* Add fade-in animation */
   @media (max-width: 960px) {
     order: 2;
     margin-bottom: 30px;
@@ -87,13 +88,26 @@ const HeroLeftContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 `;
+
 const HeroRightContainer = styled.div`
   width: 100%;
   display: flex;
   order: 2;
   justify-content: end;
   gap: 12px;
+  animation: fadeInRight 2s ease-in-out; /* Add fade-in animation */
   @media (max-width: 960px) {
     order: 1;
     justify-content: center;
@@ -103,6 +117,17 @@ const HeroRightContainer = styled.div`
 
   @media (max-width: 640px) {
     margin-bottom: 30px;
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 `;
 export const Img = styled.img`
