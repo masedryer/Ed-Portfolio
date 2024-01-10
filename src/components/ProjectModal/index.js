@@ -20,8 +20,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   max-width: 800px;
   width: 100%;
-  border-radius: 16px;
-  margin: 50px 12px;
+S  margin: 50px 12px;
   height: min-content;
   background-color: ${({ theme }) => theme.card};
   color: ${({ theme }) => theme.text_primary};
@@ -66,9 +65,9 @@ const Desc = styled.div`
 const Image = styled.img`
   width: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  margin-top: 30px;
+S  margin-top: 30px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  
 `;
 
 const Label = styled.div`
@@ -97,8 +96,7 @@ const Tag = styled.div`
   color: ${({ theme }) => theme.primary};
   margin: 4px;
   padding: 4px 8px;
-  border-radius: 8px;
-  background-color: ${({ theme }) => theme.primary + 20};
+S  background-color: ${({ theme }) => theme.primary + 20};
   @media only screen and (max-width: 600px) {
     font-size: 12px;
   }
@@ -125,7 +123,6 @@ const MemberImage = styled.img`
   width: 50px;
   height: 50px;
   object-fit: cover;
-  border-radius: 50%;
   margin-bottom: 4px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   @media only screen and (max-width: 600px) {
@@ -158,7 +155,6 @@ const Button = styled.a`
   font-weight: 600;
   color: ${({ theme }) => theme.text_primary};
   padding: 12px 16px;
-  border-radius: 8px;
   background-color: ${({ theme }) => theme.primary};
   ${({ dull, theme }) =>
     dull &&

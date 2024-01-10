@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { skills } from "../../data/constants";
-import { animateScroll as scroll } from "react-scroll";
 
 const fadeIn = keyframes`
   from {

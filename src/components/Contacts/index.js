@@ -61,7 +61,6 @@ const ContactForm = styled.form`
   flex-direction: column;
   background-color: ${({ theme }) => theme.card};
   padding: 32px;
-  border-radius: 16px;
   box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
   margin-top: 28px;
   gap: 12px;
@@ -81,7 +80,6 @@ const ContactInput = styled.input`
   outline: none;
   font-size: 18px;
   color: ${({ theme }) => theme.text_primary};
-  border-radius: 12px;
   padding: 12px 16px;
   &:focus {
     border: 1px solid ${({ theme }) => theme.primary};
@@ -95,7 +93,6 @@ const ContactInputMessage = styled.textarea`
   outline: none;
   font-size: 18px;
   color: ${({ theme }) => theme.text_primary};
-  border-radius: 12px;
   padding: 12px 16px;
   &:focus {
     border: 1px solid ${({ theme }) => theme.primary};
@@ -124,7 +121,6 @@ const ContactButton = styled.input`
   );
   padding: 13px 16px;
   margin-top: 2px;
-  border-radius: 12px;
   border: none;
   color: ${({ theme }) => theme.text_primary};
   font-size: 18px;
@@ -164,7 +160,7 @@ const Contact = () => {
           Feel free to reach out to me for any questions or opportunities!
         </Desc>
         <ContactForm ref={form} onSubmit={handleSubmit}>
-          <ContactTitle>Email Me 🚀</ContactTitle>
+          <ContactTitle>Email ✉️</ContactTitle>
           <ContactInput placeholder="Your Email" name="from_email" />
           <ContactInput placeholder="Your Name" name="from_name" />
           <ContactInput placeholder="Subject" name="subject" />
