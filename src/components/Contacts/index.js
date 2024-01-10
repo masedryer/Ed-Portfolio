@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Snackbar } from "@mui/material";
-
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -126,6 +126,22 @@ const ContactButton = styled.input`
   font-size: 18px;
   font-weight: 600;
 `;
+const ContactLinks = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+`;
+
+const SocialLink = styled.a`
+  font-size: 70px;
+  color: ${({ theme }) => theme.text_primary};
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.primary};
+  }
+`;
 
 const Contact = () => {
   //hooks
@@ -175,6 +191,25 @@ const Contact = () => {
           severity="success"
         />
       </Wrapper>
+      <Title>Contact</Title>
+      <Desc>
+        Feel free to reach out to me for any questions or opportunities!
+      </Desc>
+      <ContactLinks>
+        <SocialLink
+          href="https://www.linkedin.com/in/edry-rezal-rafik-1a264023b/"
+          target="_blank"
+        >
+          <FaLinkedin />
+        </SocialLink>
+        <SocialLink href="https://github.com/masedryer" target="_blank">
+          <FaGithub />
+        </SocialLink>
+        {/* Replace FaInstagram with FaEnvelope */}
+        <SocialLink href="mailto:edryrezal@gmail.com">
+          <FaEnvelope />
+        </SocialLink>
+      </ContactLinks>
     </Container>
   );
 };

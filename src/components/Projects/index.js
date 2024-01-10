@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import styled, { keyframes, css } from "styled-components";
+import styled from "styled-components";
 import { projects } from "../../data/constants";
-import ProjectCard, { CircleAnimation } from "../Cards/ProjectCard";
+import ProjectCard from "../Cards/ProjectCard";
 import { Element } from "react-scroll";
 
 const Container = styled.div`
@@ -25,6 +25,7 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
   align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 98%, 0 100%);
 `;
 
 const Wrapper = styled.div`
@@ -70,6 +71,7 @@ const ToggleButtonGroup = styled.div`
   border: 1.5px solid ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.primary};
   font-size: 16px;
+  border-radius: 12px;
   font-weight: 500;
   margin: 22px 0px;
   @media (max-width: 768px) {
@@ -79,6 +81,7 @@ const ToggleButtonGroup = styled.div`
 
 const ToggleButton = styled.div`
   padding: 8px 18px;
+  border-radius: 6px;
   cursor: pointer;
   ${({ active, theme }) =>
     active &&
@@ -90,9 +93,9 @@ const ToggleButton = styled.div`
   }
   @media (max-width: 768px) {
     padding: 6px 8px;
+    border-radius: 4px;
   }
 `;
-
 const Divider = styled.div`
   width: 1.5px;
   background: ${({ theme }) => theme.primary};
@@ -104,181 +107,6 @@ const CardContainer = styled.div`
   align-items: center;
   gap: 28px;
   flex-wrap: wrap;
-`;
-
-const ProjectsLines = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  margin: auto;
-  width: 90vw;
-`;
-
-const ProjectLine = styled.div`
-  position: absolute;
-  width: 1px;
-  height: 100%;
-  top: 0;
-  left: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 15vh;
-    width: 100%;
-    top: -50%;
-    left: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0) 0%,
-      #ffffff 75%,
-      #ffffff 100%
-    );
-    animation: drop 7s 0s infinite;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-  }
-
-  &:nth-child(1) {
-    margin-left: -25%;
-    &::after {
-      animation-delay: 2s;
-    }
-  }
-
-  &:nth-child(3) {
-    margin-left: 25%;
-    &::after {
-      animation-delay: 2.5s;
-    }
-  }
-`;
-
-const subtleBackgroundAnimation = keyframes`
-  0% {
-    background-position: 0% 0%;
-  }
-  25% {
-    background-position: 100% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  75% {
-    background-position: 0% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-`;
-
-const subtleBackground = css`
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      45deg,
-      hsla(16, 100%, 50%, 0.1) 0%,
-      rgba(0, 0, 0, 0.1) 100%
-    );
-    opacity: 0.5;
-    z-index: -1;
-    animation: ${subtleBackgroundAnimation} 10s linear infinite;
-  }
-`;
-
-const ContainerWithBackground = styled(Container)`
-  ${subtleBackground}
-`;
-
-const subtleLinesAnimation = keyframes`
-  0% {
-    top: -50%;
-  }
-  100% {
-    top: 110%;
-  }
-`;
-
-const dropAnimation = keyframes`
-  0% {
-    top: -50%;
-  }
-  100% {
-    top: 110%;
-  }
-`;
-
-const subtleLines = css`
-  .lines {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    margin: auto;
-    width: 90vw;
-
-    .line {
-      position: absolute;
-      width: 1px;
-      height: 100%;
-      top: 0;
-      left: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      overflow: hidden;
-
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        height: 15vh;
-        width: 100%;
-        top: -50%;
-        left: 0;
-        background: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0) 0%,
-          #ffffff 75%,
-          #ffffff 100%
-        );
-        animation-fill-mode: forwards;
-        animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-      }
-
-      &:nth-child(1) {
-        margin-left: -25%;
-        &::after {
-          animation: ${subtleLinesAnimation} 7s 2s infinite;
-        }
-      }
-
-      &:nth-child(3) {
-        margin-left: 25%;
-        &::after {
-          animation: ${subtleLinesAnimation} 7s 2.5s infinite;
-        }
-      }
-    }
-  }
-`;
-
-const subtleBackgroundAndLines = css`
-  ${subtleBackground}
-  ${subtleLines}
-`;
-
-const ContainerWithBackgroundAndLines = styled(Container)`
-  ${subtleBackgroundAndLines}
 `;
 
 const Projects = ({ openModal, setOpenModal }) => {
@@ -308,7 +136,7 @@ const Projects = ({ openModal, setOpenModal }) => {
 
   return (
     <Element name="projects">
-      <ContainerWithBackgroundAndLines id="projects">
+      <Container id="projects">
         <Wrapper>
           <Title>Projects</Title>
           <Desc>
@@ -383,7 +211,7 @@ const Projects = ({ openModal, setOpenModal }) => {
               ))}
           </CardContainer>
         </Wrapper>
-      </ContainerWithBackgroundAndLines>
+      </Container>
     </Element>
   );
 };
