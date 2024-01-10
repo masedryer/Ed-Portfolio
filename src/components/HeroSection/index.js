@@ -189,7 +189,6 @@ const ResumeButton = styled.a`
     text-align: center;
     padding: 16px 0;
     color:${({ theme }) => theme.white};
-    border-radius: 20px;
     cursor: pointer;
     font-size: 20px;
     font-weight: 600;
