@@ -20,8 +20,6 @@ const HeroContainer = styled.div`
   }
   z-index: 1;
 
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
-
   /* Subtle background animation */
   &:before {
     content: "";

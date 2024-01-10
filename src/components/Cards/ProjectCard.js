@@ -10,13 +10,11 @@ const Button = styled.button`
   font-size: 14px;
   font-weight: 700;
   border: none;
-  border-radius: 10px;
   cursor: pointer;
   transition: all 0.8s ease-in-out;
 `;
 const CircleAnimation = styled.div`
   position: absolute;
-  border-radius: 50%;
   background-color: ${({ theme }) => theme.primary};
   opacity: 0;
   transform: scale(0);
@@ -32,7 +30,6 @@ const Card = styled.div`
   height: 490px;
   background-color: ${({ theme }) => theme.card};
   cursor: pointer;
-  border-radius: 10px;
   box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   padding: 26px 20px;
@@ -68,7 +65,6 @@ const Image = styled.img`
   width: 100%;
   height: 180px;
   background-color: ${({ theme }) => theme.white};
-  border-radius: 10px;
   box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.3);
 `;
 
@@ -87,7 +83,6 @@ const Tag = styled.span`
   color: ${({ theme }) => theme.primary};
   background-color: ${({ theme }) => theme.primary + 15};
   padding: 2px 8px;
-  border-radius: 10px;
 `;
 
 const Details = styled.div`
@@ -140,7 +135,6 @@ const Members = styled.div`
 const Avatar = styled.img`
   width: 38px;
   height: 38px;
-  border-radius: 50%;
   margin-left: -10px;
   background-color: ${({ theme }) => theme.white};
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
