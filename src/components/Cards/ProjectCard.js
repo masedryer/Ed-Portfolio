@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -13,6 +13,19 @@ const Button = styled.button`
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.8s ease-in-out;
+`;
+const CircleAnimation = styled.div`
+  position: absolute;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.primary};
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &.hovered {
+    opacity: 0.5;
+    transform: scale(1);
+  }
 `;
 const Card = styled.div`
   width: 330px;
@@ -34,6 +47,20 @@ const Card = styled.div`
   }
   &:hover ${Button} {
     display: block;
+  }
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 50px 4px rgba(0, 0, 0, 0.6);
+    filter: brightness(1.1);
+  }
+
+  &:hover ${Button} {
+    display: block;
+  }
+
+  &:hover ${CircleAnimation} {
+    opacity: 0.5;
+    transform: scale(1);
   }
 `;
 
@@ -121,12 +148,26 @@ const Avatar = styled.img`
 `;
 
 const ProjectCards = ({ project, setOpenModal }) => {
+  const [hovered, setHovered] = useState(false);
+
+  const handleHoverEnter = () => {
+    setHovered(true);
+  };
+
+  const handleHoverLeave = () => {
+    setHovered(false);
+  };
+
   return (
-    <Card onClick={() => setOpenModal({ state: true, project: project })}>
+    <Card
+      onClick={() => setOpenModal({ state: true, project: project })}
+      onMouseEnter={handleHoverEnter}
+      onMouseLeave={handleHoverLeave}
+    >
       <Image src={project.image} />
       <Tags>
         {project.tags?.map((tag, index) => (
-          <Tag>{tag}</Tag>
+          <Tag key={index}>{tag}</Tag>
         ))}
       </Tags>
       <Details>
@@ -135,11 +176,11 @@ const ProjectCards = ({ project, setOpenModal }) => {
         <Description>{project.description}</Description>
       </Details>
       <Members>
-        {project.member?.map((member) => (
-          <Avatar src={member.img} />
+        {project.member?.map((member, index) => (
+          <Avatar key={index} src={member.img} />
         ))}
       </Members>
-      {/* <Button>View Project</Button> */}
+      {hovered && <CircleAnimation className="hovered" />}
     </Card>
   );
 };

@@ -11,6 +11,7 @@ const HeroContainer = styled.div`
   justify-content: center;
   position: relative;
   padding: 80px 30px;
+  overflow: hidden; /* Add overflow: hidden to hide the animation overflow */
   @media (max-width: 960px) {
     padding: 66px 16px;
   }
@@ -20,6 +21,42 @@ const HeroContainer = styled.div`
   z-index: 1;
 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
+
+  /* Subtle background animation */
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      hsla(16, 100%, 50%, 0.1) 0%,
+      hsla(39, 100%, 50%, 0.1) 100%
+    );
+    opacity: 0.5;
+    z-index: -1;
+    animation: subtleBackgroundAnimation 10s linear infinite;
+  }
+
+  @keyframes subtleBackgroundAnimation {
+    0% {
+      background-position: 0% 0%;
+    }
+    25% {
+      background-position: 100% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    75% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
 `;
 
 const HeroInnerContainer = styled.div`
