@@ -11,9 +11,11 @@ import ProjectModals from "./components/ProjectModal";
 import Contact from "./components/Contacts";
 import Arrow from "./components/HeroSection/Arrow";
 import Footer from "./components/Footer";
+import "fontsource-roboto";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
+  font-family: "Roboto", sans-serif;
   width: 100%;
   height: 100%;
   overflow-x: hidden;

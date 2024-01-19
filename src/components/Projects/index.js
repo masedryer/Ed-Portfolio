@@ -137,8 +137,8 @@ const Projects = ({ openModal, setOpenModal }) => {
         <Wrapper>
           <Title>Projects</Title>
           <Desc>
-            I have worked on a wide range of projects. From web apps to
-            wireframe. Here are some of my projects.
+            This are some of the projects I have made such as wireframe and web
+            apps.
           </Desc>
           <ToggleButtonGroup>
             {toggle === "all" ? (
