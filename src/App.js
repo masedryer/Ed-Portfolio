@@ -11,7 +11,12 @@ import ProjectModals from "./components/ProjectModal";
 import Contact from "./components/Contacts";
 import Arrow from "./components/HeroSection/Arrow";
 import Footer from "./components/Footer";
+import { createGlobalStyle } from "styled-components";
 
+const GlobalStyle = createGlobalStyle`
+body{
+  fony-family: 'Roboto',sans-serif;
+}`;
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
   width: 100%;
@@ -39,6 +44,7 @@ function App() {
   const [openModal, setOpenModal] = useState({ state: false, project: null });
   return (
     <ThemeProvider theme={darkTheme}>
+      <GlobalStyle />
       <Router>
         <Navbar />
         <Body>

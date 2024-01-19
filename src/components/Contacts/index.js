@@ -184,14 +184,12 @@ const Contact = () => {
     <Container id="contact">
       <Wrapper>
         <Title>Contact</Title>
-        <Desc>
-          Feel free to reach out to me for any questions or opportunities!
-        </Desc>
+        <Desc>Feel free to reach to me if there any questions!</Desc>
         <ContactForm ref={form} onSubmit={handleSubmit}>
           <ContactTitle>Email ✉️</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
+          <ContactInput placeholder="Email" name="from_email" />
+          <ContactInput placeholder="Name" name="from_name" />
+          <ContactInput placeholder="Topic" name="subject" />
           <ContactInputMessage placeholder="Message" rows="4" name="message" />
           <ContactButton type="submit" value="Send" />
         </ContactForm>
@@ -204,9 +202,7 @@ const Contact = () => {
         />
       </Wrapper>
       <Title>Contact</Title>
-      <Desc>
-        Feel free to reach out to me for any questions or opportunities!
-      </Desc>
+      <Desc>Feel free to reach to me if there any questions!</Desc>
       <ContactLinks>
         <SocialLink
           href="https://www.linkedin.com/in/edry-rezal-rafik-1a264023b/"
