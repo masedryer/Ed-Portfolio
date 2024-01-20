@@ -3,7 +3,6 @@ import { Link as LinkR } from "react-router-dom";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 import { useTheme } from "styled-components";
-import { Bio } from "../../data/constants";
 import logo from "../Navbar/EdryLogo/EDry Rezal.svg";
 //import { ReactComponent as Logo } from "../Navbar/EdryLogo/4.svg";
 
