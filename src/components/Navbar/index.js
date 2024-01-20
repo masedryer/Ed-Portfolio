@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link as LinkR } from "react-router-dom";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
@@ -155,7 +155,7 @@ const MobileMenuLinks = styled(LinkR)`
 `;
 
 const Navbar = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const theme = useTheme();
 
   const handleEmailButtonClick = () => {
@@ -166,8 +166,8 @@ const Navbar = () => {
     <Nav>
       <NavContainer>
         <NavLogo to="/">
-          <a
-            href="/"
+          <LinkR
+            to="/"
             style={{
               display: "flex",
               alignItems: "center",
@@ -177,7 +177,7 @@ const Navbar = () => {
             }}
           >
             <img src={logo} alt="Ed" />
-          </a>
+          </LinkR>
         </NavLogo>
         <MobileIcon>
           <FaBars
@@ -187,10 +187,18 @@ const Navbar = () => {
           />
         </MobileIcon>
         <NavItems>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#skills">Skills</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#contact">Contact</NavLink>
+          <NavLink to="#about" onClick={() => setOpen(!open)}>
+            About
+          </NavLink>
+          <NavLink to="#skills" onClick={() => setOpen(!open)}>
+            Skills
+          </NavLink>
+          <NavLink to="#projects" onClick={() => setOpen(!open)}>
+            Projects
+          </NavLink>
+          <NavLink to="#contact" onClick={() => setOpen(!open)}>
+            Contact
+          </NavLink>
         </NavItems>
         <ButtonContainer>
           <GithubButton onClick={handleEmailButtonClick}>Email</GithubButton>
@@ -199,7 +207,7 @@ const Navbar = () => {
       {open && (
         <MobileMenu open={open}>
           <MobileMenuLinks
-            href="#about"
+            to="#about"
             onClick={() => {
               setOpen(!open);
             }}
@@ -207,7 +215,7 @@ const Navbar = () => {
             About
           </MobileMenuLinks>
           <MobileMenuLinks
-            href="#skills"
+            to="#skills"
             onClick={() => {
               setOpen(!open);
             }}
@@ -215,7 +223,7 @@ const Navbar = () => {
             Skills
           </MobileMenuLinks>
           <MobileMenuLinks
-            href="#projects"
+            to="#projects"
             onClick={() => {
               setOpen(!open);
             }}
@@ -223,23 +231,22 @@ const Navbar = () => {
             Projects
           </MobileMenuLinks>
           <MobileMenuLinks
-            href="#contact"
+            to="#contact"
             onClick={() => {
               setOpen(!open);
             }}
           >
             Contact
           </MobileMenuLinks>
-
           <GithubButton
+            href="/"
+            target="_blank"
             style={{
               padding: "10px 16px",
               background: `${theme.primary}`,
               color: "white",
               width: "max-content",
             }}
-            href="/"
-            target="_blank"
           >
             GitHub Profile
           </GithubButton>
@@ -248,4 +255,5 @@ const Navbar = () => {
     </Nav>
   );
 };
+
 export default Navbar;

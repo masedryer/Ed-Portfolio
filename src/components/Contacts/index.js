@@ -82,6 +82,7 @@ const ContactTitle = styled.div`
   font-size: 24px;
   margin-bottom: 6px;
   font-weight: 600;
+  padding-left: 200px;
   color: ${({ theme }) => theme.text_primary};
 `;
 
@@ -110,7 +111,6 @@ const ContactInputMessage = styled.textarea`
     border: 1px solid ${({ theme }) => theme.primary};
   }
 `;
-
 const ContactButton = styled.input`
   width: 100%;
   text-decoration: none;
@@ -186,7 +186,7 @@ const Contact = () => {
         <Title>Contact</Title>
         <Desc>Feel free to reach to me if there any questions!</Desc>
         <ContactForm ref={form} onSubmit={handleSubmit}>
-          <ContactTitle>Email ✉️</ContactTitle>
+          <ContactTitle>Email</ContactTitle>
           <ContactInput placeholder="Email" name="from_email" />
           <ContactInput placeholder="Name" name="from_name" />
           <ContactInput placeholder="Topic" name="subject" />
